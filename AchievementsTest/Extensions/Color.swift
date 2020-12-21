@@ -15,5 +15,5 @@ extension Color {
     
     // Background
     static var secondaryHeaderBackground = Color(named: "SecondaryHeaderBackground")
-
+    static var secondaryBackground = Color(named: "SecondaryBackground")
 }

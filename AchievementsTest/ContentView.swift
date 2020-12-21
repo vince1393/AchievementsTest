@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var achievementProvider = MockAchievementProvider()
+    
     var body: some View {
-        AcheivementGrid(achievements: [], title: "")
+        ScrollView {
+            AcheivementGrid(
+                achievements: $achievementProvider.achievements,
+                title: "Personal Records"
+            )
+            AcheivementGrid(
+                achievements: $achievementProvider.races,
+                title: "Virtual Races",
+                showCompleted: false
+            )
+        }
     }
 }
 

@@ -25,4 +25,14 @@ struct Achievement {
         self.iconURL = iconURL
         self.isComplete = isComplete
     }
+    
+    
+    /// Initializer for Achievement struct
+    /// - Parameter achievementDTO: Data Transfer object for Achievements
+    init(achievementDTO: AchievementsDTO) {
+        self.name = achievementDTO.name
+        self.details = achievementDTO.description ?? "Not Yet"
+        self.iconURL = achievementDTO.url ?? ""
+        self.isComplete = achievementDTO.completed
+    }
 }

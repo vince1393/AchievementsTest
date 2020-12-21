@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct AcheivementGrid: View {
-    @State var achievements: [Achievement]
+    @Binding var achievements: [Achievement]
     var title: String
+    var showCompleted: Bool = true
     
     private var completed: String {
         let completed = achievements.filter { $0.isComplete }.count
@@ -18,7 +19,7 @@ struct AcheivementGrid: View {
     }
     
     let rows = [
-        GridItem(.adaptive(minimum: 100))
+        GridItem(.adaptive(minimum: 150))
     ]
     
     var body: some View {
@@ -27,13 +28,16 @@ struct AcheivementGrid: View {
                 Text(title)
                     .fontWeight(.bold)
                 Spacer()
-                Text(completed)
+                
+                if showCompleted {
+                    Text(completed)
+                }
             }
             .padding()
             .background(Color.secondaryHeaderBackground)
             LazyVGrid(columns: rows, spacing: 10) {
                 ForEach(achievements.indices, id: \.self) { index in
-                    Text(achievements[index].name)
+                    AchievementTile(achievement: achievements[index])
                 }
             }
         }
@@ -41,11 +45,16 @@ struct AcheivementGrid: View {
 }
 
 struct AcheivementGrid_Previews: PreviewProvider {
+    static var achievementMock = [
+        Achievement(name: "Vince's Achievement", details: "00:00:00", iconURL: "https://www.google.ca", isComplete: true),
+        Achievement(name: "Vince's Other Achievement", details: "00:00:00", iconURL: "https://www.google.ca", isComplete: true)
+    ]
+    
     static var previews: some View {
-        AcheivementGrid(achievements: [], title: "Personal Records")
+        AcheivementGrid(achievements: .constant(achievementMock), title: "Personal Records")
             .preferredColorScheme(.light)
         
-        AcheivementGrid(achievements: [], title: "Personal Records")
+        AcheivementGrid(achievements: .constant(achievementMock), title: "Personal Records")
             .preferredColorScheme(.dark)
     }
 }
