@@ -19,13 +19,14 @@
 		6165344E258FF6E9009D8679 /* AchievementTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165344D258FF6E9009D8679 /* AchievementTile.swift */; };
 		616534532590EA6B009D8679 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616534522590EA6B009D8679 /* AsyncImage.swift */; };
 		616534582590EA7E009D8679 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616534572590EA7E009D8679 /* ImageLoader.swift */; };
-		6165345E2590FB79009D8679 /* AchievementProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165345D2590FB79009D8679 /* AchievementProvider.swift */; };
-		616534672590FB9A009D8679 /* AchievementProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616534662590FB9A009D8679 /* AchievementProviderProtocol.swift */; };
-		6165346C2590FD75009D8679 /* MockAchievementProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165346B2590FD75009D8679 /* MockAchievementProvider.swift */; };
+		616534672590FB9A009D8679 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616534662590FB9A009D8679 /* ApiProtocol.swift */; };
+		6165346C2590FD75009D8679 /* AchievementProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165346B2590FD75009D8679 /* AchievementProvider.swift */; };
 		6165347525910444009D8679 /* achievements.json in Resources */ = {isa = PBXBuildFile; fileRef = 6165347425910444009D8679 /* achievements.json */; };
 		6165347B25910F8E009D8679 /* AchievementsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165347A25910F8E009D8679 /* AchievementsDTO.swift */; };
 		61653480259114A2009D8679 /* AchievementsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165347F259114A2009D8679 /* AchievementsResponseDTO.swift */; };
 		61653485259115D4009D8679 /* DataTransferObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61653484259115D4009D8679 /* DataTransferObject.swift */; };
+		6165349825924F27009D8679 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165349725924F27009D8679 /* MockApiClient.swift */; };
+		616534A025924F30009D8679 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6165349F25924F30009D8679 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,13 +65,14 @@
 		6165344D258FF6E9009D8679 /* AchievementTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementTile.swift; sourceTree = "<group>"; };
 		616534522590EA6B009D8679 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		616534572590EA7E009D8679 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		6165345D2590FB79009D8679 /* AchievementProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementProvider.swift; sourceTree = "<group>"; };
-		616534662590FB9A009D8679 /* AchievementProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementProviderProtocol.swift; sourceTree = "<group>"; };
-		6165346B2590FD75009D8679 /* MockAchievementProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAchievementProvider.swift; sourceTree = "<group>"; };
+		616534662590FB9A009D8679 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		6165346B2590FD75009D8679 /* AchievementProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementProvider.swift; sourceTree = "<group>"; };
 		6165347425910444009D8679 /* achievements.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = achievements.json; sourceTree = "<group>"; };
 		6165347A25910F8E009D8679 /* AchievementsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsDTO.swift; sourceTree = "<group>"; };
 		6165347F259114A2009D8679 /* AchievementsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsResponseDTO.swift; sourceTree = "<group>"; };
 		61653484259115D4009D8679 /* DataTransferObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferObject.swift; sourceTree = "<group>"; };
+		6165349725924F27009D8679 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		6165349F25924F30009D8679 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		61653409258D2307009D8679 /* AchievementsTest */ = {
 			isa = PBXGroup;
 			children = (
+				6165348F25924EA7009D8679 /* API Client */,
 				616534732591041C009D8679 /* Mock JSON */,
 				6165345C2590FB61009D8679 /* Provider */,
 				61653447258FF416009D8679 /* Extensions */,
@@ -192,10 +195,7 @@
 		6165345C2590FB61009D8679 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				6165347925910F70009D8679 /* Data Transfer Objects */,
-				616534652590FB81009D8679 /* Protocol */,
-				6165346B2590FD75009D8679 /* MockAchievementProvider.swift */,
-				6165345D2590FB79009D8679 /* AchievementProvider.swift */,
+				6165346B2590FD75009D8679 /* AchievementProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 		616534652590FB81009D8679 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				616534662590FB9A009D8679 /* AchievementProviderProtocol.swift */,
+				616534662590FB9A009D8679 /* ApiProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -223,6 +223,25 @@
 				6165347F259114A2009D8679 /* AchievementsResponseDTO.swift */,
 			);
 			path = "Data Transfer Objects";
+			sourceTree = "<group>";
+		};
+		6165348F25924EA7009D8679 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				6165349625924F11009D8679 /* API Implementations */,
+				6165347925910F70009D8679 /* Data Transfer Objects */,
+				616534652590FB81009D8679 /* Protocol */,
+			);
+			path = "API Client";
+			sourceTree = "<group>";
+		};
+		6165349625924F11009D8679 /* API Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				6165349725924F27009D8679 /* MockApiClient.swift */,
+				6165349F25924F30009D8679 /* ApiClient.swift */,
+			);
+			path = "API Implementations";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,13 +375,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				616534532590EA6B009D8679 /* AsyncImage.swift in Sources */,
-				6165345E2590FB79009D8679 /* AchievementProvider.swift in Sources */,
 				6165340D258D2307009D8679 /* ContentView.swift in Sources */,
 				61653440258FEBC9009D8679 /* Achievement.swift in Sources */,
-				616534672590FB9A009D8679 /* AchievementProviderProtocol.swift in Sources */,
+				6165349825924F27009D8679 /* MockApiClient.swift in Sources */,
+				616534672590FB9A009D8679 /* ApiProtocol.swift in Sources */,
 				61653485259115D4009D8679 /* DataTransferObject.swift in Sources */,
 				61653480259114A2009D8679 /* AchievementsResponseDTO.swift in Sources */,
-				6165346C2590FD75009D8679 /* MockAchievementProvider.swift in Sources */,
+				6165346C2590FD75009D8679 /* AchievementProvider.swift in Sources */,
+				616534A025924F30009D8679 /* ApiClient.swift in Sources */,
 				6165340B258D2307009D8679 /* AchievementsTestApp.swift in Sources */,
 				6165347B25910F8E009D8679 /* AchievementsDTO.swift in Sources */,
 				6165344E258FF6E9009D8679 /* AchievementTile.swift in Sources */,

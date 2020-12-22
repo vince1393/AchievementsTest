@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var achievementProvider = MockAchievementProvider()
+    @ObservedObject var achievementProvider = AchievementProvider(source: .mock)
     
     var body: some View {
         ScrollView {
