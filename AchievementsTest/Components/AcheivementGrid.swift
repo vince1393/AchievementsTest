@@ -12,13 +12,29 @@ struct AcheivementGrid: View {
     var title: String
     var showCompleted: Bool = true
     
+    
+    
+    /// Initializer for Achievement Grid
+    /// - Parameters:
+    ///   - achievements: bindable array of achievements to display
+    ///   - title: Title for the header of the grid
+    ///   - showCompleted: Whether or not to show the completion total on the right side of the header
+    init(achievements: Binding<[Achievement]>, title: String, showCompleted: Bool = true) {
+        self._achievements = achievements
+        self.title = title
+        self.showCompleted = showCompleted
+    }
+    
+    /// Text at the top right of each grid header
     private var completed: String {
         let completed = achievements.filter { $0.isComplete }.count
         let total = achievements.count
         return "\(completed) of \(total)"
     }
     
-    let rows = [
+    /// Defines the column sizing. Here I'm letting them fit as many columns as it can
+    /// They muse be at least 150 wide
+    let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
     
@@ -35,7 +51,7 @@ struct AcheivementGrid: View {
             }
             .padding()
             .background(Color.secondaryHeaderBackground)
-            LazyVGrid(columns: rows, spacing: 10) {
+            LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(achievements.indices, id: \.self) { index in
                     AchievementTile(achievement: achievements[index])
                 }

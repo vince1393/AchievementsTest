@@ -10,6 +10,7 @@ import SwiftUI
 struct AchievementTile: View {
     var achievement: Achievement
     
+    /// used to make incomplete tiles partially transparent
     var opacity: Double {
         achievement.isComplete ? 1 : 0.5
     }

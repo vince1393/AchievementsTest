@@ -10,6 +10,9 @@ import Foundation
 struct MockApiClient: ApiProtocol {
     static var shared: ApiProtocol = MockApiClient()
     
+    
+    /// Gets achievement data from mock source
+    /// - Parameter completion: compeltion handler to be called when finished
     func getAchievements(completion: (AchievementsResponseDTO?, Error?) -> Void) {
         if let url = Bundle.main.url(forResource: "achievements", withExtension: "json"),
            let data = try? Data(contentsOf: url) {

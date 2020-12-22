@@ -10,6 +10,8 @@ import SwiftUI
 struct AsyncImage: View {
     @ObservedObject var imageLoader: ImageLoader
     
+    /// Initializer for AsyncImage
+    /// - Parameter url: url of the image
     init(url: URL?) {
         imageLoader = .init(url: url)
         imageLoader.load()
